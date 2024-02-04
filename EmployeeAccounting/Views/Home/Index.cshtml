@@ -1,0 +1,203 @@
+﻿<!-- Expand Buttons -->
+<div class="row">
+    <div class="col-sm-3">
+        <a class="btn btn-primary" data-bs-toggle="collapse" href="#CreateExpandeRow" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Создать запись об отсутствии
+        </a>
+    </div>
+    <div class="col-sm-3">
+        <a class="btn btn-primary" data-bs-toggle="collapse" href="#CreateExpandeEmployee" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Добавить сотрудника
+        </a>
+    </div>
+</div>
+
+<!-- Expand Area Timesheet-->
+<div class="collapse" id="CreateExpandeRow">
+    <div class="" id="Order">
+        <div class="shadow p-3 mb-5 bg-light rounded" id="creatingFormTimesheet">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="row">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <select class="custom-select" id="employeeCreate" placeholder="Сотрудник">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <select class="custom-select" id="reasonCreate" placeholder="Причина">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5 mt-3">
+                            <input id="startDateCreate" class="form-control" type="date" />
+                        </div>
+                        <div class="col-sm-5 mt-3">
+                            <input class="form-control form-control-lg" type="number" id="durationCreate" placeholder="Продолжительность" value="0">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="discauntedCreate">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Учтено при оплате
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <textarea class="form-control form-control-lg" type="text" id="descriptionCreate" placeholder="Комментарий" rows="3"></textarea>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <button id="createTimesheetRow" class="btn btn-primary">Создать</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Expand Area Employees-->
+<div class="collapse" id="CreateExpandeEmployee">
+    <div class="" id="EmployeeCreate">
+        <div class="shadow p-3 mb-5 bg-light rounded" id="creatingFormEmployee">
+            <div class="row">
+                <div class="col-sm-2">
+                    <input class="form-control form-control-lg" type="text" id="employeeLastNameCreate" placeholder="Фамилия" value="">
+                </div>
+                <div class="col-sm-2">
+                    <input class="form-control form-control-lg" type="text" id="employeeFirstNameCreate" placeholder="Имя" value="">
+                </div>
+                <div class="col-sm-1">
+                    <button id="createEmployee" class="btn btn-primary">Создать</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal Window Timesheet-->
+<div class="modal fade" id="EditorModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Редактирование</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+                <div class="" id="timesheetEditor">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-sm-1">
+                                    <h2 id="timesheetIdUpdate">ID</h2>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <select class="custom-select" id="employeeUpdate" placeholder="Сотрудник">
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <select class="custom-select" id="reasonUpdate" placeholder="Причина">
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <input id="startDateUpdate" class="form-control" type="date" />
+                                </div>
+                                <div class="col-sm-5">
+                                    <input class="form-control form-control-lg" type="number" id="durationUpdate" placeholder="Продолжительность" value="">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="discountedUpdate">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            Учтено при оплате
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <textarea class="form-control form-control-lg" type="text" id="descriptionUpdate" placeholder="Комментарий" rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                <button type="button" id="saveUpdateChangesTimesheet" class="btn btn-primary">Сохранить изменения</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Window Employees-->
+<div class="modal fade" id="EditorModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="employeeModalLabel">Редактирование</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+                <div class="" id="employeeEditor">
+                    <div class="shadow p-3 mb-5 bg-light rounded" id="updatingForm">
+                        <div class="row">
+                            <div class="col-sm-1">
+                                <h2 id="employeeIdUpdate">ID</h2>
+                            </div>
+                            <div class="col-sm-4">
+                                <input class="form-control form-control-lg" type="text" id="employeeLastNameUpdate" placeholder="Фамилия" value="">
+                            </div>
+                            <div class="col-sm-4">
+                                <input class="form-control form-control-lg" type="text" id="employeeFirstNameUpdate" placeholder="Имя" value="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                <button type="button" id="saveUpdateChangesEmployee" class="btn btn-primary">Сохранить изменения</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row mt-3">
+    <div class="col-sm-6">
+        <div class="row">
+            <button type="button" id="timesheetOpenTable" class="btn btn-primary">Таблица учёта</button>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="row">
+            <button type="button" id="employeeOpenTable" class="btn btn-primary">Сотрудники</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- Table -->
+<div class="row">
+    <div class="shadow p-3 mb-5 bg-light rounded">
+        <table class="table table-bordered" id="viewTable">
+        </table>
+    </div>
+</div>
